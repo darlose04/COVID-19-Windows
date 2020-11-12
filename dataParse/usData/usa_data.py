@@ -9,7 +9,7 @@ us_deaths = pd.read_csv(csv_path + "time_series_covid19_deaths_US.csv")
 server = 'localhost'
 database = 'covid19'
 username = 'zsmith'
-
+password = ''
 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 
@@ -30,7 +30,7 @@ latitude_vals = us_deaths[latitude][:-1]
 longitude_vals = us_deaths[longitude][:-1]
 population_vals = us_deaths[population][:-1]
 
-cursor.execute("CREATE TABLE usa (UID INT IDENTITY (1,1) PRIMARY KEY, County VARCHAR(255), State VARCHAR(255), Latitude FLOAT, Longitude FLOAT, Population INT);")
+# cursor.execute("CREATE TABLE [covid19].[dbo].[usa] (UID INT IDENTITY (1,1) PRIMARY KEY, County nvarchar(50), State nvarchar(50), Latitude FLOAT, Longitude FLOAT, Population INT);")
 
 sql = "INSERT INTO usa (County, State, Latitude, Longitude, Population) VALUES (?, ?, ?, ?, ?)"
 
@@ -46,5 +46,9 @@ data_arr = list(zip(county_arr, province_state_vals,
                     latitude_vals, longitude_vals, population_vals))
 
 for item in data_arr:
-    cursor.execute(sql, item)
+    with cursor.execute(sql, item):
+        print("Success")
+
+# for item in data_arr:
+#     cursor.execute(sql, item)
 # cursor.execute(sql, data_arr)
