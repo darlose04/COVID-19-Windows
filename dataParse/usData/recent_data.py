@@ -8,8 +8,6 @@ us_confirmed = pd.read_csv(csv_path + "time_series_covid19_confirmed_US.csv")
 death_dates = us_deaths.columns[12:]
 confirmed_dates = us_confirmed.columns[12:]
 
-# print(us_deaths.shape[0])
-
 def create_csv(data, dates, csv_name):
     columns = ['UID']
 
