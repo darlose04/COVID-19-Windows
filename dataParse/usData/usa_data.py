@@ -9,7 +9,7 @@ us_deaths = pd.read_csv(csv_path + "time_series_covid19_deaths_US.csv")
 server = 'localhost'
 database = 'covid19'
 username = 'zsmith'
-password = ''
+password = os.environ['DBPASSWD']
 
 cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 
