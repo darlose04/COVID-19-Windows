@@ -53,4 +53,4 @@ del global_daily_report['Combined_Key']
 
 engine = create_engine(f"mssql+pyodbc://zsmith:{os.environ['DBPASSWD']}@localhost/covid19?driver=ODBC+Driver+17+for+SQL+Server")
 
-global_daily_report.to_sql('daily_report', engine, if_exists='replace', index=True, index_label=None, method=None)
+global_daily_report.to_sql('global_daily_report', engine, if_exists='replace', index=True, index_label=None, method=None)
