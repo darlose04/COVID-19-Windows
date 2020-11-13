@@ -24,7 +24,7 @@ def create_csv(data, dates, csv_name):
     col_arr = []
     count = 1
 
-    while count < data.shape[0]:
+    while count <= data.shape[0]:
         sub_arr = []
         sub_arr.append(uid_arr.pop(0))
 
