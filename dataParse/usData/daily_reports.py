@@ -9,7 +9,7 @@ csv_path = "E:/Programming/Projects/COVID-19-Windows/covidData/COVID-19/csse_cov
 # check if the date is January 1st and adjust day, month, and year accordingly
 if datetime.now().day == 1 and datetime.now().month == 1:
     month = 12
-    day == 31
+    day = 31
     year = datetime.now().year - 1
 
 # check if it's March 1st in order to set the necessary to Feb 28th. Not going to bother with checking for leap years, won't be needed for 4 years and hopefully COVID won't be a thing by then
