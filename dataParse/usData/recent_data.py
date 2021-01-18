@@ -10,6 +10,7 @@ confirmed_dates = us_confirmed.columns[12:]
 
 def create_csv(data, dates, csv_name):
     columns = ['UID']
+    dataLength = len(data)
 
     for header in dates:
         columns.append(header)
@@ -17,14 +18,14 @@ def create_csv(data, dates, csv_name):
     uid_arr = []
     increment = 1
 
-    while increment <= data.shape[0]:
+    while increment <= dataLength:
         uid_arr.append(increment)
         increment += 1
 
     col_arr = []
     count = 1
 
-    while count <= data.shape[0]:
+    while count <= dataLength:
         sub_arr = []
         sub_arr.append(uid_arr.pop(0))
 
