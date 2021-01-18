@@ -4,7 +4,7 @@ import pyodbc
 import os
 from datetime import datetime
 
-csv_path = "E:/Programming/Projects/COVID-19-Windows/covidData/COVID-19/csse_covid_19_data/csse_covid_19_daily_reports/"
+csv_path = "E:/Programming/Projects/COVID-19-Windows/covidData/csse_covid_19_data/csse_covid_19_daily_reports/"
 
 # check if the date is January 1st and adjust day, month, and year accordingly
 if datetime.now().day == 1 and datetime.now().month == 1:
